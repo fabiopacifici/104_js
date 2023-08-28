@@ -1,0 +1,45 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container
+{
+	width: 70%;
+	max-width: 800px;
+	margin: auto
+}
+
+
+.fields {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.box {
+	width: calc(100% / 10);
+	aspect-ratio: 1;
+	background-color: aqua;
+	border: 1px solid;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.bg-green {
+	background-color: palegreen;
+}
+
+.bg-yellow
+{
+	background-color: palegoldenrod;
+}
+
+.bg-red
+{
+	background-color: palevioletred;
+}
