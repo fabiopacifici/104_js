@@ -1,0 +1,3 @@
+element.addEventListener('click', function(){
+
+})

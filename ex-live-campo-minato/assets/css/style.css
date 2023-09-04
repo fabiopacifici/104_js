@@ -1,0 +1,41 @@
+body
+{
+	background: #000;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container
+{
+	max-width: 800px;
+	margin: 2rem auto;
+}
+
+.bg-green
+{
+	background-color: palegreen;
+}
+
+.field
+{
+	display: flex;
+	flex-wrap: wrap;
+
+	& .cell
+	{
+		width: calc(100% / 10);
+		aspect-ratio: 1 / 1;
+		border: 1px solid white;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+}
