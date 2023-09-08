@@ -2,7 +2,34 @@
 /* Funcitons */
 
 
+function generateSlideCardMarkup(activeSlide, slide, index){
 
+    return `
+      <div class="slide ${activeSlide === index ? 'active' : ''}">
+        <img src="${slide.image}" alt="">
+        <div class="slide-text">
+          <h3>${slide.title}</h3>
+          <p>${slide.text}</p>
+        </div>
+      </div>
+    `
+
+}
+
+function generateCardSlides(list, activeSlide, domElement) {
+
+  list.forEach((element, i) => {
+    const slideMarkup = generateSlideCardMarkup(activeSlide, element, i)
+    ////console.log(slideMarkup);
+    domElement.insertAdjacentHTML('beforeend', slideMarkup)
+  })
+
+}
+
+
+
+
+/* Only x thumbs */
 
 function generateSlideMarkup(activeSlide, slide, index) {
   return `<img class="${activeSlide === index ? 'active' : ''}" src="${slide.image}" alt="">`
@@ -54,9 +81,9 @@ const sliderImagesEl = document.querySelector('.slider .images')
 const prevEl = document.querySelector('.prev')
 const nextEl = document.querySelector('.next')
 
-generateSlides(slides, activeSlide, sliderImagesEl);
+generateCardSlides(slides, activeSlide, sliderImagesEl);
 
-const slidesImages = document.querySelectorAll('.slider .images > img')
+const slidesImages = document.querySelectorAll('.slider .images > .slide')
 
 
 const thumbsElement = document.querySelector('.thumbnails')
@@ -73,7 +100,7 @@ function next() {
 
   // select the current slide
   const currentSlide = slidesImages[activeSlide]
-  //console.log(currentSlide);
+  console.log(currentSlide);
   // remove the active class from the current slide
   currentSlide.classList.remove('active')
 
