@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Document</title>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+		integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+		crossorigin='anonymous' referrerpolicy='no-referrer' />
+	<link href='./assets/css/style.css' rel='stylesheet'>
+</head>
+
+<body>
+	<div id='app'>
+
+
+		<h1 class="title">{{movie.title}}</h1>
+
+		<div class="container">
+			<div class="card movie">
+				<img :src="movie.images[activeImage]" alt="">
+
+				<div class="thumbnails">
+					<img src="https://www.themoviedb.org/t/p/w500/b3zVRZ9R2QyV0klRESMLKaBwQqm.jpg" class="thumb active">
+					<img src="https://www.themoviedb.org/t/p/w500/b3zVRZ9R2QyV0klRESMLKaBwQqm.jpg" class="thumb">
+					<img src="https://www.themoviedb.org/t/p/w500/b3zVRZ9R2QyV0klRESMLKaBwQqm.jpg" class="thumb">
+					<img src="https://www.themoviedb.org/t/p/w500/b3zVRZ9R2QyV0klRESMLKaBwQqm.jpg" class="thumb">
+					<img src="https://www.themoviedb.org/t/p/w500/b3zVRZ9R2QyV0klRESMLKaBwQqm.jpg" class="thumb">
+				</div>
+
+				<div class="navigator">
+					<div class="prev" @click="prev()">
+						<i class="fa-solid fa-chevron-left"></i>
+					</div>
+					<div class="next" @click="next()">
+						<i class="fa-solid fa-chevron-right">
+						</i>
+					</div>
+				</div>
+				<div class="details">
+					<h3 class="title"></h3>
+					<div>Category: {{movie.category}} </div>
+					<small>Lenght: {{movie.length}} min</small>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- Development only cdn, disable in production -->
+	<script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+	<script src='./assets/js/app.js'></script>
+</body>
+
+</html>
